@@ -69,8 +69,6 @@ func main() {
 	legacyOpts.LegacyProvider.OIDCIssuerURL = opts.IssuerURL
 	legacyOpts.LegacyProvider.Scope = opts.Scopes
 	legacyOpts.LegacyProvider.InsecureOIDCAllowUnverifiedEmail = strings.EqualFold(opts.AllowUnverifiedEmail, "true")
-	// The subject stays the same when a user changes their email address.
-	legacyOpts.LegacyProvider.UserIDClaim = "sub"
 	legacyOpts.LegacyProvider.CodeChallengeMethod = "S256"
 
 	oauthProxyOpts, err := legacyOpts.ToOptions()
